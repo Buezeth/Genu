@@ -1,4 +1,3 @@
-import Image from "next/image";
 import LogoAnimation from "@/components/LogoAnimation";
 import HeroText from "@/components/HeroText";
 import LogoName from "@/components/LogoName";

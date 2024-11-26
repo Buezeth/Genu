@@ -1,15 +1,16 @@
-import LogoAnimation from "@/components/LogoAnimation";
-import HeroText from "@/components/HeroText";
-import LogoName from "@/components/LogoName";
 import Footer from "@/components/Footer";
+
+import SmoothScrollWrapper from "@/components/SmoothScrollWrapper";
+
+import NavBar from "@/components/NavBar";
+import PageTransition from "@/components/PageTransition";
 
 export default function Home() {
   return (
-    <section className="home flex flex-col justify-center items-center">
-      <LogoAnimation />
-      <LogoName />
-      <HeroText />
+    <SmoothScrollWrapper>
+      <NavBar />
+      <PageTransition />
       <Footer />
-    </section>
+    </SmoothScrollWrapper>
   );
 }

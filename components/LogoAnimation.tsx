@@ -1,8 +1,10 @@
-import React from "react";
-
-function LogoAnimation() {
+function LogoAnimation({
+  logoRef,
+}: {
+  logoRef: React.ForwardedRef<HTMLInputElement>;
+}) {
   return (
-    <div className="logo flex justify-center">
+    <div ref={logoRef} className="logo flex justify-center">
       <svg
         width="470"
         height="470"

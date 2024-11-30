@@ -4,13 +4,15 @@ import SmoothScrollWrapper from "@/components/SmoothScrollWrapper";
 
 import NavBar from "@/components/NavBar";
 import PageTransition from "@/components/PageTransition";
+import About from "@/components/About";
 
 export default function Home() {
   return (
-    <SmoothScrollWrapper>
+    <main>
       <NavBar />
       <PageTransition />
+      <About />
       <Footer />
-    </SmoothScrollWrapper>
+    </main>
   );
 }

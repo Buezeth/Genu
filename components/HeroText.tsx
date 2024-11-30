@@ -13,10 +13,12 @@ const HeroText = ({
   }, []);
 
   return (
-    <div ref={textRef} className="animated-text p-5">
-      <h1 className="text-2xl">
-        Because we believe <span className="hi"></span>
-        <span className="text"></span>
+    <div ref={textRef} className="py-10">
+      <h1 className="text-xl md:text-3xl text-center uppercase">
+        <span className="font-bold">Because we believe</span>
+        <br />
+        <span className=""></span>
+        <span className="text text-[--main-red] py-5 font-extrabold"></span>
         <span className="cursor">_</span>
       </h1>
     </div>

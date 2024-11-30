@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React, { ReactNode, Ref, useRef } from "react";
 
 const LogoName = ({
   imageRef,
@@ -7,8 +6,14 @@ const LogoName = ({
   imageRef: React.ForwardedRef<HTMLInputElement>;
 }) => {
   return (
-    <div ref={imageRef} className="mb-5">
-      <Image src={"/genu-logo.png"} width={418} height={56} alt="Genu Logo" />
+    <div ref={imageRef} className="my-5">
+      <Image
+        src={"/genu-logo.png"}
+        width={418}
+        height={56}
+        alt="Genu Logo"
+        className="max-w-[300px] md:max-w-[418px]"
+      />
     </div>
   );
 };

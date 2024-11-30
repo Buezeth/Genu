@@ -4,7 +4,10 @@ function LogoAnimation({
   logoRef: React.ForwardedRef<HTMLInputElement>;
 }) {
   return (
-    <div ref={logoRef} className="logo flex justify-center">
+    <div
+      ref={logoRef}
+      className="max-w-[350px] md:max-w-[470px] logo flex justify-center"
+    >
       <svg
         width="470"
         height="470"

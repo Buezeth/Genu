@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --main-red: #a81c1c
 }
 
 @media (prefers-color-scheme: bright) {
@@ -79,17 +80,24 @@ body {
   }
 }
 
-.animated-text span {
-  @apply text-[#a81c1c] font-bold;
-}
 
 .footer {
-  @apply flex flex-col md:flex-row min-w-[700px] text-xs;
+  /* @apply flex flex-col md:flex-row min-w-[700px] text-xs; */
+  @apply grid items-start grid-rows-2 grid-cols-2 md:grid-cols-4 md:grid-rows-1 md:max-w-[860px] mx-auto text-xs py-2;
 }
 .footer div {
-  @apply max-w-[300px] pr-5 pl-5;
+  @apply max-w-[300px] px-5;
 }
-.footer li,
-.footer {
-  @apply pt-1;
+.footer li {
+  @apply py-1;
+}
+
+.about {
+  /* clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%); */
+  /* background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.05) 0.5px,
+      transparent 0px
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.05) 0.5px, transparent 0px); */
 }

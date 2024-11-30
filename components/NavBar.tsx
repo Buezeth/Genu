@@ -10,7 +10,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const NavBar = () => {
   const containerRef = useRef(null);
+  // const animateNav = (self: any) => {
 
+  // };
   useGSAP(() => {
     const showAnim = gsap
       .from(containerRef.current, {
@@ -25,13 +27,17 @@ const NavBar = () => {
       end: "max",
       //   markers: true,
       onUpdate: (self) => {
-        self.direction === -1 ? showAnim.play() : showAnim.reverse();
+        if (self.direction === -1) {
+          showAnim.play();
+        } else {
+          showAnim.reverse();
+        }
       },
     });
   });
   return (
     <div className=" navbar fixed flex justify-between w-screen pt-4">
-      <div className="pl-12 hover:scale-110 transition-all flex justify-center items-center">
+      <div className="md:flex  pl-12 hover:scale-110 transition-all hidden justify-center items-center">
         <Link href={"/"}>
           <Image
             src={"/Genu-logo.png"}
@@ -41,11 +47,16 @@ const NavBar = () => {
           />
         </Link>
       </div>
+      <div className=" md:hidden pl-2 transition-all flex justify-center items-center">
+        <Link href={"/"}>
+          <Image src={"/Genulogo.png"} alt="Home Logo" width={30} height={30} />
+        </Link>
+      </div>
       <div
         ref={containerRef}
         className="w-[500px] text-[#a81c1c] font-bold pr-3 text-l"
       >
-        <ul className="flex justify-evenly">
+        <ul className="hidden md:flex justify-evenly">
           <li>
             <Link href={"/"}>Home</Link>
           </li>

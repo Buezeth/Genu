@@ -47,7 +47,7 @@ const NavBar = () => {
           />
         </Link>
       </div>
-      <div className=" md:hidden pl-2 transition-all flex justify-center items-center">
+      <div className=" md:hidden pl-2 transition-all flex justify-center items-center shadow-black">
         <Link href={"/"}>
           <Image src={"/Genulogo.png"} alt="Home Logo" width={30} height={30} />
         </Link>

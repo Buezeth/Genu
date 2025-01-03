@@ -36,7 +36,7 @@ const NavBar = () => {
     });
   });
   return (
-    <div className=" navbar fixed flex justify-between w-screen pt-4">
+    <div className=" navbar fixed flex justify-between w-screen pt-4 z-10">
       <div className="md:flex  pl-12 hover:scale-110 transition-all hidden justify-center items-center">
         <Link href={"/"}>
           <Image
@@ -54,7 +54,7 @@ const NavBar = () => {
       </div>
       <div
         ref={containerRef}
-        className="w-[500px] text-[#a81c1c] font-bold pr-3 text-l"
+        className="w-[500px] text-[#a81c1c] font-outline font-bold pr-3 text-l"
       >
         <ul className="hidden md:flex justify-evenly">
           <li>

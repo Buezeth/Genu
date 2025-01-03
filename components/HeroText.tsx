@@ -1,7 +1,8 @@
 "use client";
 
-import { textAnimation } from "@/utils/animations";
+import { textAnimation, textSwitch } from "@/utils/animations";
 import { useEffect } from "react";
+import SpinText from "./SpinText";
 
 const HeroText = ({
   textRef,
@@ -9,19 +10,23 @@ const HeroText = ({
   textRef: React.ForwardedRef<HTMLInputElement>;
 }) => {
   useEffect(() => {
-    textAnimation();
+    // textAnimation();
+    // textSwitch()
   }, []);
 
   return (
-    <div ref={textRef} className="py-10">
-      <h1 className="text-xl md:text-3xl text-center uppercase">
+    <div ref={textRef} className="pt-5 pb-20">
+      <h1 className="text-center uppercase">
         <span className="font-bold">Because we believe</span>
         <br />
+        <br />
+        <SpinText />
         <span className=""></span>
         <span className="text text-[--main-red] py-5 font-extrabold"></span>
-        <span className="cursor">_</span>
+        {/* <span className="cursor">_</span> */}
       </h1>
     </div>
+
   );
 };
 

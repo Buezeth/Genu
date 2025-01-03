@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --main-red: #a81c1c
+  --main-red: #a81c1c;
 }
 
 @media (prefers-color-scheme: bright) {
@@ -53,6 +56,30 @@ body {
   animation: rotate 4s ease-out infinite reverse;
 }
 
+.topic::before {
+  position: absolute;
+  content: "";
+  height: 2.6em;
+  width: 2.6em;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(150, 4, 31, 1) 50%,
+    rgba(191, 4, 38, 1) 60%
+  );
+  border-radius: 0 0 0.5em 0;
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+/* .topic:active {
+  box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
+  transform: translate(0.1em, 0.1em);
+} */
+
 @keyframes float-top {
   50% {
     transform: rotate(-3deg) translate(0, -3px) scale(1.01);
@@ -80,24 +107,92 @@ body {
   }
 }
 
+@layer base {
+  .footer {
+    /* @apply flex flex-col md:flex-row min-w-[700px] text-xs; */
+    @apply grid items-start grid-rows-2 grid-cols-2 md:grid-cols-4 md:grid-rows-1 md:max-w-[860px] mx-auto text-xs py-2;
+  }
+  .footer div {
+    @apply max-w-[300px] px-5;
+  }
+  .footer li {
+    @apply py-1;
+  }
 
-.footer {
-  /* @apply flex flex-col md:flex-row min-w-[700px] text-xs; */
-  @apply grid items-start grid-rows-2 grid-cols-2 md:grid-cols-4 md:grid-rows-1 md:max-w-[860px] mx-auto text-xs py-2;
-}
-.footer div {
-  @apply max-w-[300px] px-5;
-}
-.footer li {
-  @apply py-1;
+  .font-outline {
+    /* -webkit-text-stroke: 10px blue; */
+    @apply drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)];
+  }
 }
 
-.about {
-  /* clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%); */
-  /* background-image: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.05) 0.5px,
-      transparent 0px
-    ),
-    linear-gradient(rgba(0, 0, 0, 0.05) 0.5px, transparent 0px); */
+
+/* ====================================================== */
+/* ====================================================== */
+/* ====================================================== */
+
+.cubespinner {
+  animation-name: spincube;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 12s;
+  transform-style: preserve-3d;
+  transform-origin: 40px 40px 0;
+  inset: 0;
+}
+
+.cubespinner div {
+  position: absolute;
+  /* max-width: 1200px; */
+  /* height: 2px; */
+  text-align: center;
+  color: #109393;
+  /* font-family: "Raleway", sans-serif; */
+  font-family: "STIX Two Text", serif;
+  /* font-size: 3rem; */
+  font-weight: 700;
+  inset: 0;
+  height: 75px;
+}
+
+.cubespinner .face1 {
+  color: #bf0426;
+  transform: translateZ(40px);
+  -webkit-backface-visibility: hidden;
+}
+.cubespinner .face2 {
+  color: #f1c40f;
+  transform: rotateX(90deg) translateZ(40px);
+  -webkit-backface-visibility: hidden;
+}
+.cubespinner .face3 {
+  color: #bf0426;
+  transform: rotateX(180deg) translateZ(40px);
+  -webkit-backface-visibility: hidden;
+}
+.cubespinner .face4 {
+  color: #f1c40f;
+  transform: rotateX(270deg) translateZ(40px);
+  -webkit-backface-visibility: hidden;
+}
+
+@-webkit-keyframes spincube {
+  0%,
+  25% {
+    -webkit-transform: rotateX(0deg);
+  }
+  25%,
+  50% {
+    -webkit-transform: rotateX(90deg);
+  }
+  50%,
+  75% {
+    -webkit-transform: rotateX(180deg);
+  }
+  75%,
+  100% {
+    -webkit-transform: rotateX(270deg);
+  }
+  100% {
+    -webkit-transform: rotateX(1turn);
+  }
 }

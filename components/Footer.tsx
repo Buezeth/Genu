@@ -5,7 +5,7 @@ import React from "react";
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className=" bg-[--main-red] text-white">
+    <footer className=" bg-[--primary-500] text-white">
       <div className="footer">
         <div>
           <ul>

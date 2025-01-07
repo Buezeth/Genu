@@ -22,7 +22,7 @@ const HeroText = ({
         <br />
         <SpinText />
         <span className=""></span>
-        <span className="text text-[--main-red] py-5 font-extrabold"></span>
+        <span className="text text-[--primary-500] py-5 font-extrabold"></span>
         {/* <span className="cursor">_</span> */}
       </h1>
     </div>

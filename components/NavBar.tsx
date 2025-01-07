@@ -54,7 +54,7 @@ const NavBar = () => {
       </div>
       <div
         ref={containerRef}
-        className="w-[500px] text-[#a81c1c] font-outline font-bold pr-3 text-l"
+        className="w-[500px] text-primary-500  font-outline font-bold pr-3 text-l"
       >
         <ul className="hidden md:flex justify-evenly">
           <li>
